@@ -16,7 +16,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 model = LinearRegression()
 model.fit(X_train, y_train)
-
 y_pred = model.predict(X_test)
 
 mse = mean_squared_error(y_test, y_pred)
@@ -30,7 +29,6 @@ print(f'R^2 Value: {r2:.4f}')
 
 joblib.dump(model, "groundwater_model.pkl")
 print("Model saved.")
-
 results = pd.DataFrame({
     "Actual": y_test.values,
     "Predicted": y_pred
