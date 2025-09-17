@@ -10,7 +10,6 @@ df_new = df_new.dropna()
 X_new = df_new.drop(columns=['datetime', 'water_level_m'], errors='ignore')
 
 predictions = model.predict(X_new)
-
 df_new['predicted_water_level'] = predictions
 df_new.to_csv('predicted_groundwater_levels.csv', index=False)
 
